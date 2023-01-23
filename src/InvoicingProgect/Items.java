@@ -1,12 +1,16 @@
 package InvoicingProgect;
 
+import java.util.ArrayList;
+
 public class Items {
 
 	private String itemName;
 	private Integer itemId;
 	private Integer itemNo;
-	private Integer itemprice;
-	private Integer totalPrice=itemprice+itemNo;
+	private double itemprice;
+	private double totalPrice=itemprice+itemNo;
+	
+	
 	
 	
 	//
@@ -37,16 +41,16 @@ public class Items {
 	public void setItemNo(Integer itemNo) {
 		this.itemNo = itemNo;
 	}
-	public Integer getitemPrice() {
+	public double getitemPrice() {
 		return itemprice;
 	}
-	public void setitemPrice(Integer itemprice) {
+	public void setitemPrice(double itemprice) {
 		this.itemprice = itemprice;
 	}
-	public Integer getTotalPrice() {
+	public double getTotalPrice() {
 		return totalPrice;
 	}
-	public void setTotalPrice(Integer totalPrice) {
+	public void setTotalPrice(double totalPrice) {
 		this.totalPrice = totalPrice;
 	}
 	

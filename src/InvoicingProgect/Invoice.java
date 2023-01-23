@@ -1,5 +1,7 @@
 package InvoicingProgect;
 
+import java.util.ArrayList;
+
 public class Invoice {
 	//data of invoice
 	private Integer invoiceNo;
@@ -10,11 +12,11 @@ public class Invoice {
 	//data of items in invoice with price
 	private Integer noOfItems;
 	private String nameOfItems;
-	private Integer itemPrice;
+	private double itemPrice;
 	private Integer QuantityOfItems;
 	private Integer paymentPrice;
 	
-	
+	ArrayList<String> itemsList = new ArrayList<>();
 //git sit 
 	
 	public Integer getInvoiceNo() {
@@ -60,10 +62,10 @@ public class Invoice {
 	public void setPaymentPrice(Integer paymentPrice) {
 		this.paymentPrice = paymentPrice;
 	}
-	public Integer getItemPrice() {
+	public double getItemPrice() {
 		return itemPrice;
 	}
-	public void setItemPrice(Integer itemPrice) {
+	public void setItemPrice(double itemPrice) {
 		this.itemPrice = itemPrice;
 	}
 	public Integer getQuantityOfItems() {
