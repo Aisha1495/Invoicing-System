@@ -14,10 +14,12 @@ public class Invoice {
 	private String nameOfItems;
 	private double itemPrice;
 	private Integer QuantityOfItems;
-	private Integer paymentPrice;
+	private double paidAmount;
+	private double paymentPrice;
 	
 	ArrayList<String> itemsList = new ArrayList<>();
-//git sit 
+
+	//git/set 
 	
 	public Integer getInvoiceNo() {
 		return invoiceNo;
@@ -56,10 +58,10 @@ public class Invoice {
 		this.nameOfItems = nameOfItems;
 	}
 	
-	public Integer getPaymentPrice() {
+	public double getPaymentPrice() {
 		return paymentPrice;
 	}
-	public void setPaymentPrice(Integer paymentPrice) {
+	public void setPaymentPrice(double paymentPrice) {
 		this.paymentPrice = paymentPrice;
 	}
 	public double getItemPrice() {
@@ -73,6 +75,12 @@ public class Invoice {
 	}
 	public void setQuantityOfItems(Integer quantityOfItems) {
 		QuantityOfItems = quantityOfItems;
+	}
+	public double getPaidAmount() {
+		return paidAmount;
+	}
+	public void setPaidAmount(double paidAmount) {
+		this.paidAmount = paidAmount;
 	}
 	
 

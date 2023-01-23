@@ -6,15 +6,14 @@ public class MainMenuApp {
 
 	public static void main(String[] args) {
 
+		System.out.println(" Welcome to Invoice Store ");
+		System.out.println(" ===================================== ");
 		Invoice invoice = new Invoice();
-
-		System.out.println(" Welcome to Invoice System ");
-		System.out.println(" ============================================== ");
-
 		Scanner sc = new Scanner(System.in);
 
 		boolean additem = true;
 		while (additem) {
+
 			Integer total = 0;
 
 			System.out.println("Enter Invoice Number:  ");
@@ -37,7 +36,7 @@ public class MainMenuApp {
 			int noOfItems = sc.nextInt();
 			invoice.setNoOfItems(noOfItems);
 
-			// inter items
+			// enter items
 
 			for (int i = 0; i < noOfItems; i++) {
 				System.out.println("Enter the item Name: ");
@@ -57,16 +56,27 @@ public class MainMenuApp {
 
 				} else if (answer.equals("no")) {
 					additem = false;
+
 					System.out.println("Total price: ");
 					total = (int) (itemPrice * QuantityOfItems);
 					System.out.println(total);
+				}
+					//paid amount 
+					
+					System.out.println("The Paid amount given: ");
+					double paidAmount =sc.nextDouble();
+					System.out.println("Paid amount is: "+paidAmount);
+					Double totalPaid=total-paidAmount;
+				
+					if (totalPaid<0) {
+						System.out.println("shoper return: "+totalPaid+" RO");
+					}else if (totalPaid>0) {
+						System.out.println("Coustomer must add: "+totalPaid+" RO");
+						
+					}
 					
 					break;
-
 				}
-				
 			}
 		}
-
 	}
-}
