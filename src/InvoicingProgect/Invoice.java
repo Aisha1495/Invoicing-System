@@ -10,7 +10,8 @@ public class Invoice {
 	//data of items in invoice with price
 	private Integer noOfItems;
 	private String nameOfItems;
-	private Integer totalPrice;
+	private Integer itemPrice;
+	private Integer QuantityOfItems;
 	private Integer paymentPrice;
 	
 	
@@ -52,17 +53,24 @@ public class Invoice {
 	public void setNameOfItems(String nameOfItems) {
 		this.nameOfItems = nameOfItems;
 	}
-	public Integer getTotalPrice() {
-		return totalPrice;
-	}
-	public void setTotalPrice(Integer totalPrice) {
-		this.totalPrice = totalPrice;
-	}
+	
 	public Integer getPaymentPrice() {
 		return paymentPrice;
 	}
 	public void setPaymentPrice(Integer paymentPrice) {
 		this.paymentPrice = paymentPrice;
+	}
+	public Integer getItemPrice() {
+		return itemPrice;
+	}
+	public void setItemPrice(Integer itemPrice) {
+		this.itemPrice = itemPrice;
+	}
+	public Integer getQuantityOfItems() {
+		return QuantityOfItems;
+	}
+	public void setQuantityOfItems(Integer quantityOfItems) {
+		QuantityOfItems = quantityOfItems;
 	}
 	
 

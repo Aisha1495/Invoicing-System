@@ -5,13 +5,13 @@ public class Items {
 	private String itemName;
 	private Integer itemId;
 	private Integer itemNo;
-	private Integer price;
-	private Integer totalPrice=price+itemNo;
+	private Integer itemprice;
+	private Integer totalPrice=itemprice+itemNo;
 	
 	
 	//
 	public void UnitPrice() {
-		System.out.println("Item name: "+itemName+ " The price: "+price);
+		System.out.println("Item name: "+itemName+ " The price: "+itemprice);
 		
 	}
 	public void quantityTotal() {
@@ -37,11 +37,11 @@ public class Items {
 	public void setItemNo(Integer itemNo) {
 		this.itemNo = itemNo;
 	}
-	public Integer getPrice() {
-		return price;
+	public Integer getitemPrice() {
+		return itemprice;
 	}
-	public void setPrice(Integer price) {
-		this.price = price;
+	public void setitemPrice(Integer itemprice) {
+		this.itemprice = itemprice;
 	}
 	public Integer getTotalPrice() {
 		return totalPrice;

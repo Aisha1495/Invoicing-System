@@ -31,12 +31,28 @@ public class MainMenuApp {
 		invoice.setCustomerNumber(CustomerNumber);
 		
 		
-//		System.out.println("Enter School id:  ");
-//		int sId = sc.nextInt();
-//		sch.setSchoolId(sId);
-//		+ invoice.getInvoiceNo()
-	
+		System.out.println("Enter Items Number:  ");
+		int noOfItems = sc.nextInt();
+		invoice.setNoOfItems(noOfItems);
+		//inter items
+	 
+		Integer total = 0;
+		for(int i=0; i<noOfItems; i++) {
+			System.out.println("Enter the item Name: ");
+			String nameOfItem=sc.next();
+			System.out.println("Enter the item Price: ");
+			int itemPrice = sc.nextInt();
+			System.out.println("Enter the Quantity of the items: ");
+			int QuantityOfItems = sc.nextInt();
+			System.out.println();
+			
+			total=total+(itemPrice*QuantityOfItems);
+			
+		}
+			
+			
 
+	
+		}
 	}
 
-}
