@@ -1,7 +1,7 @@
 package InvoicingProgect;
 
 public class setting {
-	//Tel / Fax / Email / Website
+	//hidder....shop name//Tel / Fax / Email / Website
 	
 	private String shopName;
 	private Integer TelNum;
