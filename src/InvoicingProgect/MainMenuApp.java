@@ -1,131 +1,100 @@
 package InvoicingProgect;
-
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class MainMenuApp {
+	
+	// create array of invoices to store all invices in the system
+		public static ArrayList<Invoice> invoices = new ArrayList<Invoice>();
+		
+		// create array of items to store all items in the system
+		public static ArrayList<Items> items = new ArrayList<Items>();
+		
+		public static setting settings = new setting();
+		
 
 	public static void main(String[] args) {
-
-		System.out.println(" Welcome to Invoice Store ");
-		System.out.println(" ===================================== ");
-		Invoice invoice = new Invoice();
-		Scanner sc = new Scanner(System.in);
 		
-		boolean condition = true;
-		while(condition==true){
-		 int select;
-		System.out.println("Press 1 for print Invoice");
-        System.out.println("Press 2 for items buy");
-        System.out.println("Press 3 for exit");
+		printMenu(1);
+        System.out.println("Enter Your option:");
+        Scanner sc = new Scanner(System.in);
+        int select = sc.nextInt();
         
-        System.out.println("press any choice number:");
-        select = sc.nextInt();
-
         switch (select) {
-        case 1:
-		
-        	boolean additem = true;
-		
-        	while (additem) {
-
-			Integer total = 0;
-
-			System.out.println("Enter Invoice Number:  ");
-			int invoiceNo = sc.nextInt();
-			invoice.setInvoiceNo(invoiceNo);
-
-			System.out.println("Enter Invoice Date:  ");
-			String invoiceDate = sc.next();
-			invoice.setInvoiceDate(invoiceDate);
-
-			System.out.println("Enter Customer Name:  ");
-			String CustomerName = sc.next();
-			invoice.setCustomerName(CustomerName);
-
-			System.out.println("Enter Customer Number:  ");
-			int CustomerNumber = sc.nextInt();
-			invoice.setCustomerNumber(CustomerNumber);
-			
-		
-			System.out.println("Enter Items Number:  ");
-			int noOfItems = sc.nextInt();
-			invoice.setNoOfItems(noOfItems);
-
-			// enter items
-
-			for (int i = 0; i < noOfItems; i++) {
-				System.out.println("Enter the item Name: ");
-				String nameOfItem = sc.next();
-				System.out.println("Enter the item Price: ");
-				double itemPrice = sc.nextDouble();
-				System.out.println("Enter the Quantity of the items: ");
-				int QuantityOfItems = sc.nextInt();
-				System.out.println();
-
-				System.out.println("Do you want to Enter Other items? (yes/no):  ");
-				String answer = sc.next();
-				invoice.equals(invoice);
-				if (answer.equals("yes")) {
-					System.out.println("Next item:");
-					additem = true;
-
-				} else if (answer.equals("no")) {
-					additem = false;
-
-					System.out.println("Total price: ");
-					total = (int) (itemPrice * QuantityOfItems);
-					System.out.println(total);
-					
-					//paid amount 
-					
-					System.out.println("The Paid amount given: ");
-					double paidAmount =sc.nextDouble();
-					System.out.println("Paid amount is: "+paidAmount);
-					Double totalPaid=total-paidAmount;
-				
-					if (totalPaid<0) {
-						System.out.println("shoper return: "+totalPaid+" RO");
-					}else if (totalPaid>0) {
-						System.out.println("Coustomer must add: "+totalPaid+" RO");
-							
-					}
-					
-					break;
-				
-				}
-			}
-			
+	        case 1:
+	        	//Shop Settings print
+	        	printMenu(2);
+	        	settingsMenu();
+	        	break;
+	        case 2:
+	        	//Shop Items
+	        	printMenu(3);
+	        
+	        	break;
+	        case 3:
+	        	// Create New Invoice
+	        
+	        case 4:
+	        	//Report: Statistics
+	        	
+	        case 5:
+	        	//All Invoices
+	        
+	        case 6:
+	        	//search Invoice
+	        	
+	        case 7:
+	        	//Program Statistics
+	        	
+	        case 8:
+	        	//exit
+	        	 System.exit(0);
+	        	 break;
+        }		
+}
+	
+		//the program will call this function if want to print menus (main, settings and items)
+	private static void printMenu(int menuNum) {
+	        switch (menuNum) {
+	        case 1: // main menu
+				System.out.println(" Welcome to Invoice Store ");
+				System.out.println(" ===================================== ");
+				System.out.println("1 Shop Settings");
+		        System.out.println("2 Manage items");
+		        System.out.println("3 Create New Invoice");
+		        System.out.println("4 Statistics");
+		        System.out.println("5 All Invoices");
+		        System.out.println("6 Search Invoice");
+		        System.out.println("7 Program Statistics");
+		        System.out.println("8 Exit");
+		        break;
+	        case 2: // setting menu
+				System.out.println("1 Load Data (Items and invoices)");
+		        System.out.println("2 Set Shop Name");
+		        System.out.println("3 Set Invoice Header (Tel/Fax/Email/Website)");
+		        System.out.println("4 Go Back");
+		        break;
+	        case 3: // items menu
+				System.out.println("1 Add Items");
+		        System.out.println("2 Delete Items");
+		        System.out.println("3 Change Item Price");
+		        System.out.println("4 Report All Items");
+		        System.out.println("5 Go Back");
+		        break;
+	        }
 		}
 		
+		//options for settings menu
+		private static void settingsMenu() {
+	        Scanner sc = new Scanner(System.in);
+	        int select = sc.nextInt();
+	        
+	        // Load Data
 
-        case 2:
-        	
-        	try{
-        	
-        	    FileOutputStream fos = new FileOutputStream("Report.txt");
-        	    ObjectOutputStream out = new ObjectOutputStream(fos);
-        	    System.out.println("Enter items name report: ");
-            	invoice.getNameOfItems();
-            	System.out.println("Enter items price report: ");
-            	invoice.getItemPrice();
-            	
-        	    out.close();
-        	    System.out.println("Report is create sucssesfully");
-        	}
-        	
-        	    catch (IOException ioe){
-        	    }
-        	
-        case 3:
-        	 System.exit(0);
-        	 
-        	 break;
+		}
+			
 
-        	
+
 	}
-}
-}
-}
+	
