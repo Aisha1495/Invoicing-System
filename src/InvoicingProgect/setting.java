@@ -1,8 +1,14 @@
 package InvoicingProgect;
 
-public class setting {
+import java.io.Serializable;
+
+public class setting implements Serializable {
 	//hidder....shop name//Tel / Fax / Email / Website
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String shopName;
 	private Integer TelNum;
 	private Integer faxNo;
