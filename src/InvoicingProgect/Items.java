@@ -2,6 +2,7 @@ package InvoicingProgect;
 
 import java.io.Serializable;
 
+
 public class Items implements Serializable{
 
 		/**
@@ -14,7 +15,7 @@ public class Items implements Serializable{
 		private Integer stock;
 		private Integer quantity;
 
-		
+	
 		public Integer getQuantity() {
 			return quantity;
 		}

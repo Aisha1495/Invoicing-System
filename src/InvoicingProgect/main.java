@@ -3,9 +3,11 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.nio.channels.SelectableChannel;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class main {
@@ -18,42 +20,54 @@ public class main {
 	
 	public static setting settings = new setting();
 	
+	public static HashMap<String,Integer> MenuOptions = new HashMap<String,Integer>();
+	
+	
 	public static void main(String[] args) {
-		
+		statisticsOptions();
 		printMenu(1);
+		MenuOptions.put("Case 0", MenuOptions.get("Case 0")+1);
         System.out.println("Enter Your option:");
         Scanner sc = new Scanner(System.in);
 
         int select = sc.nextInt();
-        
+
         switch (select) {
 	        case 1:
 	        	//Shop Settings print
+	        	MenuOptions.put("Case 1", MenuOptions.get("Case 1")+1);
 	        	printMenu(2);
 	        	settingsMenu();
 	        	break;
 	        case 2:
 	        	//Shop Items
+	        	MenuOptions.put("Case 2", MenuOptions.get("Case 2")+1);
 	        	printMenu(3);
 	        	itemsMenu();
 	        	break;
 	        case 3:
 	        	// Create New Invoice
+	        	MenuOptions.put("Case 3", MenuOptions.get("Case 3")+1);
 	        	addNewInvoice();
 	        case 4:
 	        	//Report: Statistics
+	        	MenuOptions.put("Case 4", MenuOptions.get("Case 4")+1);
 	        	statistics();
 	        case 5:
 	        	//All Invoices
+	        	MenuOptions.put("Case 5", MenuOptions.get("Case 5")+1);
 	        	printAllInvoices();
 	        case 6:
 	        	//search Invoice
+	        	MenuOptions.put("Case 6", MenuOptions.get("Case 6")+1);
 	        	searchInvoice(); 
 	        case 7:
 	        	//Program Statistics
+	        	MenuOptions.put("Case 7", MenuOptions.get("Case 7")+1);
 	        	programStatistics(); 
 	        case 8:
 	        	//exit
+	        	MenuOptions.put("Case 8", MenuOptions.get("Case 8")+1);
 	        	System.out.println("Are you sure you want to Exit? (yes/no)");
 	        	if(sc.next().equals("yes")) {
 	        	 System.exit(0);
@@ -296,8 +310,7 @@ public class main {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-	    
+	 
 	}
 	
 	//load items from file
@@ -527,9 +540,34 @@ public class main {
 
 	//Program Statistics
 	private static void programStatistics() {
+	
+		System.out.println("Main menu open time: " + MenuOptions.get("Case 0"));
+		System.out.println("setting menu open time: " + MenuOptions.get("Case 1"));
+		System.out.println("Items menu open time: " + MenuOptions.get("Case 3"));
+		System.out.println("Create New Invoice menu open time: " + MenuOptions.get("Case 4"));
+		System.out.println("Statistics open time: " + MenuOptions.get("Case 5"));
+		System.out.println("All Invoices menu open time: " + MenuOptions.get("Case 6"));
+		System.out.println("Search Invoice menu open time: " + MenuOptions.get("Case 7"));
+		System.out.println("Program Statistics menu open time: " + MenuOptions.get("Case 8"));
 		
 		
 		main(null);
+	}
+	
+	private static void statisticsOptions() {
+	if(!MenuOptions.containsKey("Case 0")) {
+		
+		MenuOptions.put("Case 0", 0);
+		MenuOptions.put("Case 1", 0);
+		MenuOptions.put("Case 2", 0);
+		MenuOptions.put("Case 3", 0);
+		MenuOptions.put("Case 4", 0);
+		MenuOptions.put("Case 5", 0);
+		MenuOptions.put("Case 6", 0);
+		MenuOptions.put("Case 7", 0);
+		MenuOptions.put("Case 8", 0);
+		
+	}
 	}
 	
 }
