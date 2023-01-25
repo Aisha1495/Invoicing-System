@@ -543,12 +543,13 @@ public class main {
 	
 		System.out.println("Main menu open time: " + MenuOptions.get("Case 0"));
 		System.out.println("setting menu open time: " + MenuOptions.get("Case 1"));
-		System.out.println("Items menu open time: " + MenuOptions.get("Case 3"));
-		System.out.println("Create New Invoice menu open time: " + MenuOptions.get("Case 4"));
-		System.out.println("Statistics open time: " + MenuOptions.get("Case 5"));
-		System.out.println("All Invoices menu open time: " + MenuOptions.get("Case 6"));
-		System.out.println("Search Invoice menu open time: " + MenuOptions.get("Case 7"));
-		System.out.println("Program Statistics menu open time: " + MenuOptions.get("Case 8"));
+		System.out.println("Items menu  open time: " + MenuOptions.get("Case 2"));
+		System.out.println("Create New Invoice menu open time: " + MenuOptions.get("Case 3"));
+		System.out.println("Statistics menu open time: " + MenuOptions.get("Case 4"));
+		System.out.println("All Invoices open time: " + MenuOptions.get("Case 5"));
+		System.out.println("Search Invoice menu open time: " + MenuOptions.get("Case 6"));
+		System.out.println("Program Statistics menu open time: " + MenuOptions.get("Case 7"));
+		System.out.println("Exit open time: " + MenuOptions.get("Case 8"));
 		
 		
 		main(null);
